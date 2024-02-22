@@ -1,9 +1,25 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
+import { Route, Routes, BrowserRouter } from "react-router-dom";
+import reportWebVitals from '../reportWebVitals';
+import Header from './Components/Header/Header'
+import "./index.css"
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-)
+const Main = () => {
+  return (
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<Header />} />
+    </Routes>
+  </BrowserRouter>
+  )
+}
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(<Main />);
+reportWebVitals();
+// I want shampoo shampoo I want shampoo shampoo
+// I want shampoo shampoo
+// You want shampoopoo
+// pam pam pam parapampam pam pam pam pam pam
