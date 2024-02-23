@@ -4,15 +4,17 @@ import { Route, Routes, BrowserRouter } from "react-router-dom";
 import reportWebVitals from '../reportWebVitals';
 import Header from './Components/Header/Header'
 import "./index.css"
+import Homepage from './Components/Homepage/Homepage';
 
 const Main = () => {
   return (
-  <BrowserRouter>
-    <Routes>
-      <Route path="/" element={<Header />} />
-    </Routes>
-  </BrowserRouter>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        {/* <Route path="/home" element={<Homepage />} /> */}
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
