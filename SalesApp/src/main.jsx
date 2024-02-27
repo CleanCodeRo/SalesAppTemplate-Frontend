@@ -5,13 +5,20 @@ import reportWebVitals from '../reportWebVitals';
 import Header from './Components/Header/Header'
 import "./index.css"
 import Homepage from './Components/Homepage/Homepage';
+import SignIn from './Components/SignIn/SignIn';
+import CreateAccount from './Components/CreateAccount/CreateAccount';
 
 const Main = () => {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Homepage />} />
-        {/* <Route path="/home" element={<Homepage />} /> */}
+      </Routes>
+      <Routes>
+        <Route path="/signIn" element={<SignIn />} />
+      </Routes>
+      <Routes>
+        <Route path="/createAccount" element={<CreateAccount />} />
       </Routes>
     </BrowserRouter>
   );
@@ -21,7 +28,3 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(<Main />);
 reportWebVitals();
-// I want shampoo shampoo I want shampoo shampoo
-// I want shampoo shampoo
-// You want shampoopoo
-// pam pam pam parapampam pam pam pam pam pam
