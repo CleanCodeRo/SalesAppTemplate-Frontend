@@ -1,13 +1,32 @@
 import React, { Component } from "react";
 import { useState } from "react";
 import Header from "../Header/Header";
+import state from "../Atom/Atom";
+import { useAtom } from "jotai";
 
 const Homepage = () => {
   const [cartOpen, setCartOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [showCartProducts, setShowCartProducts] = useAtom(state.showCartProducts);
 
   const toggleCart = () => {
     setCartOpen(!cartOpen);
+  };
+
+  const handleMouseMove = (e) => {
+    const x = e.clientX;
+    const y = e.clientY;
+    const element = document.getElementById("listElement");
+
+    if(x < 1400 || x > 2150) {
+      setShowCartProducts(false);
+    }
+    if(element) {
+      if(y - element.getBoundingClientRect().height > 200) {
+        setShowCartProducts(false);
+      }
+    }
+    console.log(element.getBoundingClientRect())
   };
 
   const toggleMenu = () => {
@@ -15,7 +34,7 @@ const Homepage = () => {
   };
 
   return (
-    <div>
+    <div onMouseMove={handleMouseMove}>
       <Header></Header>
       <div className="bg-white">
         <main className="my-8">
@@ -60,7 +79,7 @@ const Homepage = () => {
                       Tempore facere provident molestias ipsam sint voluptatum
                       pariatur.
                     </p>
-                    <button className="flex items-center mt-4 text-white text-sm uppercase font-medium rounded hover:underline focus:outline-none">
+                    <button className="flex items-center mt-4 px-3 py-2 bg-primary-200 text-white text-sm uppercase font-medium rounded hover:bg-primary-100 focus:outline-none focus:bg-primary-300">
                       <span>Shop Now</span>
                       <svg
                         className="h-5 w-5 mx-2"
@@ -86,7 +105,7 @@ const Homepage = () => {
                       Tempore facere provident molestias ipsam sint voluptatum
                       pariatur.
                     </p>
-                    <button className="flex items-center mt-4 text-white text-sm uppercase font-medium rounded hover:underline focus:outline-none">
+                    <button className="flex items-center mt-4 px-3 py-2 bg-primary-200 text-white text-sm uppercase font-medium rounded hover:bg-primary-100 focus:outline-none focus:bg-primary-300">
                       <span>Shop Now</span>
                       <svg
                         className="h-5 w-5 mx-2"
