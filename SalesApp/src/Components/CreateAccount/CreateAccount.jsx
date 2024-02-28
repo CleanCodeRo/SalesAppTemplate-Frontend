@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 
 const CreateAccount = () => {
   return (
@@ -17,25 +18,27 @@ const CreateAccount = () => {
         <div className="lg:p-36 md:p-52 sm:20 p-8 w-full lg:w-1/2">
           <h1 className="text-2xl font-semibold mb-4">Create Account</h1>
           <form action="#" method="POST">
-            {/* <!-- email Input --> */}
-
-            <label className="block text-black">First Name</label>
-            <input
-              type="text"
-              placeholder="First Name"
-              name="First Name"
-              className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none "
-              autocomplete="off"
-            />
-
-            <label className="block text-black">Last Name</label>
-            <input
-              type="text"
-              placeholder="Last Name"
-              name="Last Name"
-              className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none "
-              autocomplete="off"
-            />
+            {/* <!-- Input --> */}
+            <div className="mb-4">
+              <label className="block text-black">First Name</label>
+              <input
+                type="text"
+                placeholder="First Name"
+                name="First Name"
+                className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none "
+                autocomplete="off"
+              />
+            </div>
+            <div className="mb-4">
+              <label className="block text-black">Last Name</label>
+              <input
+                type="text"
+                placeholder="Last Name"
+                name="Last Name"
+                className="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none "
+                autocomplete="off"
+              />
+            </div>
             <div className="mb-4">
               <label for="email" className="block text-black">
                 Email
