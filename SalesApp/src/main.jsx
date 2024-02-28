@@ -7,6 +7,7 @@ import "./index.css"
 import Homepage from './Components/Homepage/Homepage';
 import SignIn from './Components/SignIn/SignIn';
 import CreateAccount from './Components/CreateAccount/CreateAccount';
+import Product from './Components/Products/Product/Product';
 
 const Main = () => {
   return (
@@ -19,6 +20,9 @@ const Main = () => {
       </Routes>
       <Routes>
         <Route path="/createAccount" element={<CreateAccount />} />
+      </Routes>
+      <Routes>
+        <Route path="/product" element={<Product />} />
       </Routes>
     </BrowserRouter>
   );

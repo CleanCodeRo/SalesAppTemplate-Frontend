@@ -291,7 +291,7 @@ const Header = () => {
                 <div className="space-y-6 border-t border-gray-200 px-4 py-6">
                   <div className="flow-root">
                     <a
-                      href="#"
+                      href="/signIn"
                       className="-m-2 block p-2 font-medium text-gray-900"
                     >
                       Sign in
@@ -299,7 +299,7 @@ const Header = () => {
                   </div>
                   <div className="flow-root">
                     <a
-                      href="#"
+                      href="/createAccount"
                       className="-m-2 block p-2 font-medium text-gray-900"
                     >
                       Create account
@@ -326,11 +326,10 @@ const Header = () => {
         </Dialog>
       </Transition.Root>
 
-      <header className="relative bg-white">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white ">
         <p className="flex h-10 items-center justify-center bg-primary-100 px-4 text-sm font-medium text-white sm:px-6 lg:px-8">
           Get free delivery on orders over $100
         </p>
-
         <nav
           aria-label="Top"
           className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
@@ -486,14 +485,14 @@ const Header = () => {
               <div className="ml-auto flex items-center">
                 <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
                   <a
-                    href="#"
+                    href="/signIn"
                     className="text-sm font-medium text-gray-700 hover:text-gray-800"
                   >
                     Sign in
                   </a>
                   <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
                   <a
-                    href="#"
+                    href="/createAccount"
                     className="text-sm font-medium text-gray-700 hover:text-gray-800"
                   >
                     Create account
