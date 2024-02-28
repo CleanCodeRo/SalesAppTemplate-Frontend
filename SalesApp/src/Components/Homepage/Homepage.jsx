@@ -7,7 +7,12 @@ import { useAtom } from "jotai";
 const Homepage = () => {
   const [cartOpen, setCartOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const [showCartProducts, setShowCartProducts] = useAtom(state.showCartProducts);
+  const [showCartProducts, setShowCartProducts] = useAtom(
+    state.showCartProducts
+  );
+  const [isPhoneResoluton, setIsPhoneResolution] = useAtom(
+    state.isPhoneResolution
+  );
 
   const toggleCart = () => {
     setCartOpen(!cartOpen);
@@ -17,16 +22,23 @@ const Homepage = () => {
     const x = e.clientX;
     const y = e.clientY;
     const element = document.getElementById("listElement");
+    const container = document.getElementById("container");
 
-    if(x < 1400 || x > 2150) {
-      setShowCartProducts(false);
-    }
-    if(element) {
-      if(y - element.getBoundingClientRect().height > 200) {
-        setShowCartProducts(false);
+    if (container.getBoundingClientRect().width > 768) {
+      setIsPhoneResolution(false);
+      if (element) {
+        if (
+          y - element.getBoundingClientRect().bottom > 50 ||
+          x - element.getBoundingClientRect().right > 50 ||
+          element.getBoundingClientRect().x - x > 50
+        ) {
+          setShowCartProducts(false);
+        }
       }
+    } else {
+      setIsPhoneResolution(true);
     }
-    console.log(element.getBoundingClientRect())
+    console.log(container.getBoundingClientRect());
   };
 
   const toggleMenu = () => {
@@ -34,8 +46,8 @@ const Homepage = () => {
   };
 
   return (
-    <div onMouseMove={handleMouseMove}>
-      <Header></Header>
+    <div id="container" onMouseMove={handleMouseMove}>
+      <Header />
       <div className="bg-white">
         <main className="my-8">
           <div className="container mx-auto px-6">

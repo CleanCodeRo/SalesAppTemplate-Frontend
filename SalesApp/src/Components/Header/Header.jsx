@@ -144,9 +144,8 @@ const navigation = {
 
 const Header = () => {
   const [open, setOpen] = useState(false);
-  const [showCartProducts, setShowCartProducts] = useAtom(
-    state.showCartProducts
-  );
+  const [showCartProducts, setShowCartProducts] = useAtom(state.showCartProducts);
+  const [isPhoneResoluton, setIsPhoneResolution] = useAtom(state.isPhoneResolution);
 
   return (
     <div className="bg-white fixed w-full">
@@ -519,9 +518,11 @@ const Header = () => {
                   >
                     <div className="relative inline-block">
                       <ShoppingBagIcon
-                        className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"
+                        className="h-6 w-6 text-gray-400 hover:text-gray-500"
                         aria-hidden="true"
-                        onMouseOver={() => setShowCartProducts(true)}
+                        id="redNumber"
+                        onMouseOver={() => !isPhoneResoluton ? setShowCartProducts(true) : null}
+                        onClick={() => isPhoneResoluton ? (!showCartProducts ? setShowCartProducts(true) : setShowCartProducts(false)) : null}
                       />
                       <div className="absolute top-0 right-0 -mt-1 -mr-2">
                         <div className="text-xs rounded-full px-1 font-bold bg-red-700 text-white">
@@ -532,10 +533,10 @@ const Header = () => {
 
                     {/* Product list container */}
                     <div
-                      className={`absolute mt-14 w-64 right-0 transition-all duration-300 ${
+                      className={`absolute mt-14 w-64 right-0 transition-all duration-300  ${
                         showCartProducts
                           ? "opacity-100 translate-y-0"
-                          : "opacity-0 translate-y-2"
+                          : "opacity-0 translate-y-2 z-0"
                       }`}
                     >
                       <div className="flex flex-row cursor-pointer truncate p-2 px-4 rounded">
