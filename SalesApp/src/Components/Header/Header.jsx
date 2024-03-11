@@ -150,7 +150,7 @@ const Header = () => {
     const x = e.clientX;
     const y = e.clientY;
     const element = document.getElementById("listElement");
-    const container = document.getElementById("container");
+    const container = document.getElementById("root");
 
     if (container.getBoundingClientRect().width > 768) {
       setIsPhoneResolution(false);
@@ -168,8 +168,36 @@ const Header = () => {
     }
   };
 
+  const handleSearchClick = () => {
+    setOpenSearchBar(!openSearchBar);
+    const searchForm = document.getElementById("searchForm");
+    if(openSearchBar) {
+    setTimeout(() => {
+      searchForm.classList.add("w-0")
+    }, 500)
+      searchForm.classList.remove("w-0")
+    }
+  }
+
+  useEffect(() => {
+    document.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      document.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
+
+  useEffect(() => {
+    // Simulating a delay to demonstrate the transition on component mount
+    const delay = setTimeout(() => {
+      setOpenSearchBar(true);
+    }, 500); // Adjust the delay as needed
+    // Cleanup function to clear the timeout on component unmount
+    return () => clearTimeout(delay);
+  }, []);
+
   return (
-    <div className="bg-white fixed w-full z-50">
+    <div>
       <div
         onMouseMove={handleMouseMove}
         className="w-full h-screen z-0 absolute"
@@ -524,9 +552,12 @@ const Header = () => {
                 </div>
 
                 {/* Search */}
-                <div className="flex lg:ml-6">
-                  {openSearchBar && (
-                    <form className={`max-w-md mx-auto transition-all duration-300 opacity-100 ${openSearchBar ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-2'}`}>                  
+                <div className="flex lg:ml-6">                  
+                    <form id="searchForm" className={`transition-all duration-500 ${
+                      openSearchBar ? " -translate-x-0 opacity-100 visible"
+                      : "translate-x-1 opacity-0 invisible"
+                    }`}
+                    >                  
                       <div class="relative">
                         <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                           <svg
@@ -555,17 +586,13 @@ const Header = () => {
                         
                       </div>
                     </form>
-                  )}
+                  
                   <a className="p-2 text-gray-400 hover:text-gray-500">
                     <span className="sr-only">Search</span>
                     <MagnifyingGlassIcon
                       className="h-6 w-6"
                       aria-hidden="true"
-                      onClick={() =>
-                        openSearchBar
-                          ? setOpenSearchBar(false)
-                          : setOpenSearchBar(true)
-                      }
+                      onClick={() => handleSearchClick()}
                     />
                   </a>
                 </div>
