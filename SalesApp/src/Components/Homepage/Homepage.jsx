@@ -20,7 +20,7 @@ const Homepage = () => {
   return (
     <div
       className=" pt-24"
-      id="container">
+      >
       <Header />
       <div className="flex-1 bg-white">
         <main className="my-8">

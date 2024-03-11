@@ -4,7 +4,7 @@ import Footer from "../Footer/Footer";
 
 const CreateAccount = () => {
   return (
-    <div>
+    <div id="container">
       <Header />
       <div className="bg-gray-100 flex justify-center items-center h-screen">
         {/* <!-- Left: Image --> */}
@@ -15,7 +15,7 @@ const CreateAccount = () => {
           />
         </div>
         {/* <!-- Right: Login Form --> */}
-        <div className="lg:p-36 md:p-52 sm:20 p-8 w-full lg:w-1/2">
+        <div className="lg:p-36 md:p-52 sm:20 p-8 w-full lg:w-1/2 z-10">
           <h1 className="text-2xl font-semibold mb-4">Create Account</h1>
           <form action="#" method="POST">
             {/* <!-- Input --> */}
