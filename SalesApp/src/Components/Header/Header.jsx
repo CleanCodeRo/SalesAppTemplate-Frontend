@@ -10,8 +10,6 @@ import classNames from "classnames";
 import state from "../Atom/Atom";
 import { useAtom } from "jotai";
 
-
-
 const navigation = {
   categories: [
     {
@@ -144,11 +142,38 @@ const navigation = {
 
 const Header = () => {
   const [open, setOpen] = useState(false);
-  const [showCartProducts, setShowCartProducts] = useAtom(state.showCartProducts);
-  const [isPhoneResoluton, setIsPhoneResolution] = useAtom(state.isPhoneResolution);
+  const [showCartProducts, setShowCartProducts] = useState(false);
+  const [isPhoneResoluton, setIsPhoneResolution] = useState(false);
+  const [openSearchBar, setOpenSearchBar] = useState(false);
+
+  const handleMouseMove = (e) => {
+    const x = e.clientX;
+    const y = e.clientY;
+    const element = document.getElementById("listElement");
+    const container = document.getElementById("container");
+
+    if (container.getBoundingClientRect().width > 768) {
+      setIsPhoneResolution(false);
+      if (element) {
+        if (
+          y - element.getBoundingClientRect().bottom > 50 ||
+          x - element.getBoundingClientRect().right > 50 ||
+          element.getBoundingClientRect().x - x > 50
+        ) {
+          setShowCartProducts(false);
+        }
+      }
+    } else {
+      setIsPhoneResolution(true);
+    }
+  };
 
   return (
-    <div className="bg-white fixed w-full">
+    <div className="bg-white fixed w-full z-50">
+      <div
+        onMouseMove={handleMouseMove}
+        className="w-full h-screen z-0 absolute"
+      ></div>
       {/* Mobile menu */}
       <Transition.Root show={open} as={Fragment}>
         <Dialog as="div" className="relative z-40 lg:hidden" onClose={setOpen}>
@@ -347,7 +372,7 @@ const Header = () => {
 
               {/* Logo */}
               <div className="-m-4 flex lg:ml-0">
-                <a href="#">
+                <a href="/">
                   <span className="sr-only">Your Company</span>
                   <img
                     className="h-16 w-auto"
@@ -500,28 +525,69 @@ const Header = () => {
 
                 {/* Search */}
                 <div className="flex lg:ml-6">
-                  <a href="#" className="p-2 text-gray-400 hover:text-gray-500">
+                  {openSearchBar && (
+                    <form className={`max-w-md mx-auto transition-all duration-300 opacity-100 ${openSearchBar ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-2'}`}>                  
+                      <div class="relative">
+                        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                          <svg
+                            class="w-4 h-4 text-gray-500 dark:text-gray-400"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 20 20"
+                          >
+                            <path
+                              stroke="currentColor"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                            />
+                          </svg>
+                        </div>
+                        <input
+                          type="search"
+                          id="default-search"
+                          class="h-10 block p-4 ps-10 text-sm rounded-full text-gray-900 border border-gray-300 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                          placeholder="Search Mockups, Logos..."
+                          required
+                        />
+                        
+                      </div>
+                    </form>
+                  )}
+                  <a className="p-2 text-gray-400 hover:text-gray-500">
                     <span className="sr-only">Search</span>
                     <MagnifyingGlassIcon
                       className="h-6 w-6"
                       aria-hidden="true"
+                      onClick={() =>
+                        openSearchBar
+                          ? setOpenSearchBar(false)
+                          : setOpenSearchBar(true)
+                      }
                     />
                   </a>
                 </div>
 
                 {/* Cart */}
                 <div className="ml-4 flow-root lg:ml-6 relative">
-                  <a
-                    href="#"
-                    className="group -m-2 flex items-center p-2 relative"
-                  >
+                  <a className="group -m-2 flex items-center p-2 relative cursor-pointer">
                     <div className="relative inline-block">
                       <ShoppingBagIcon
                         className="h-6 w-6 text-gray-400 hover:text-gray-500"
                         aria-hidden="true"
                         id="redNumber"
-                        onMouseOver={() => !isPhoneResoluton ? setShowCartProducts(true) : null}
-                        onClick={() => isPhoneResoluton ? (!showCartProducts ? setShowCartProducts(true) : setShowCartProducts(false)) : null}
+                        onMouseOver={() =>
+                          !isPhoneResoluton ? setShowCartProducts(true) : null
+                        }
+                        onClick={() =>
+                          isPhoneResoluton
+                            ? !showCartProducts
+                              ? setShowCartProducts(true)
+                              : setShowCartProducts(false)
+                            : null
+                        }
                       />
                       <div className="absolute top-0 right-0 -mt-1 -mr-2">
                         <div className="text-xs rounded-full px-1 font-bold bg-red-700 text-white">

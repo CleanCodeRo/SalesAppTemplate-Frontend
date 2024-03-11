@@ -7,7 +7,7 @@ import "./index.css"
 import Homepage from './Components/Homepage/Homepage';
 import SignIn from './Components/SignIn/SignIn';
 import CreateAccount from './Components/CreateAccount/CreateAccount';
-import Product from './Components/Products/Product/Product';
+import Product from './Components/Products/ProductPage/ProductPage';
 
 const Main = () => {
   return (

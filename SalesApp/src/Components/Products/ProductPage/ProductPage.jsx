@@ -3,7 +3,7 @@ import Footer from "../../Footer/Footer";
 
 const Product = () => {
   return (
-    <div className=" pt-24">
+    <div id="container" className=" pt-24">
       <Header />
       <section className="py-12 sm:py-16">
         <div className="container mx-auto px-4">

@@ -8,37 +8,9 @@ import { useAtom } from "jotai";
 const Homepage = () => {
   const [cartOpen, setCartOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
-  const [showCartProducts, setShowCartProducts] = useAtom(
-    state.showCartProducts
-  );
-  const [isPhoneResoluton, setIsPhoneResolution] = useAtom(
-    state.isPhoneResolution
-  );
 
   const toggleCart = () => {
     setCartOpen(!cartOpen);
-  };
-
-  const handleMouseMove = (e) => {
-    const x = e.clientX;
-    const y = e.clientY;
-    const element = document.getElementById("listElement");
-    const container = document.getElementById("container");
-
-    if (container.getBoundingClientRect().width > 768) {
-      setIsPhoneResolution(false);
-      if (element) {
-        if (
-          y - element.getBoundingClientRect().bottom > 50 ||
-          x - element.getBoundingClientRect().right > 50 ||
-          element.getBoundingClientRect().x - x > 50
-        ) {
-          setShowCartProducts(false);
-        }
-      }
-    } else {
-      setIsPhoneResolution(true);
-    }
   };
 
   const toggleMenu = () => {
@@ -48,7 +20,7 @@ const Homepage = () => {
   return (
     <div
       className=" pt-24"
-      onMouseMove={handleMouseMove}>
+      id="container">
       <Header />
       <div className="flex-1 bg-white">
         <main className="my-8">
