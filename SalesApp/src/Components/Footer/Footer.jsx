@@ -72,7 +72,7 @@ const Footer = () => {
       <div className="container px-6 py-12 mx-auto">
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-4">
           <div className="sm:col-span-2">
-            <h1 className="max-w-lg text-xl font-semibold tracking-tight text-gray-800 xl:text-2xl dark:text-white">
+            <h1 className="max-w-lg text-xl font-semibold tracking-tight text-black xl:text-2xl">
               Subscribe our newsletter to get an update.
             </h1>
 
@@ -80,7 +80,7 @@ const Footer = () => {
               <input
                 id="email"
                 type="text"
-                className="px-4 py-2 text-black bg-white border rounded-md dark:bg-gray-900 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-blue-300"
+                className="px-4 py-2 text-black bg-white border rounded-md focus:border-primary-100 focus:outline-none focus:ring focus:ring-opacity-40 focus:ring-blue-300"
                 placeholder="Email Address"
               />
 
@@ -91,26 +91,24 @@ const Footer = () => {
           </div>
 
           <div>
-            <p className="font-semibold text-gray-800 dark:text-white">
-              Quick Link
-            </p>
+            <p className="font-semibold text-black">Quick Link</p>
 
             <div className="flex flex-col items-start mt-5 space-y-2">
               <a
                 href="/"
-                className="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:cursor-pointer hover:text-blue-500"
+                className="text-black transition-colors duration-300 hover:underline hover:cursor-pointer hover:text-white"
               >
                 Home
               </a>
               <a
                 href="/aboutUs"
-                className="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:cursor-pointer hover:text-blue-500"
+                className="text-black transition-colors duration-300 hover:underline hover:cursor-pointer hover:text-white"
               >
                 Who We Are
               </a>
               <a
                 href="/termsAndConditions"
-                className="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:cursor-pointer hover:text-blue-500"
+                className="text-black transition-colors duration-300 hover:underline hover:cursor-pointer hover:text-white"
               >
                 Terms and Conditions
               </a>
@@ -128,9 +126,9 @@ const Footer = () => {
                   stroke="currentColor"
                 >
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     d="M12 6v6m0 0v6m0-6h6m-6 0H6"
                   ></path>
                 </svg>
@@ -156,9 +154,9 @@ const Footer = () => {
                       stroke="currentColor"
                     >
                       <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
                         d="M6 18L18 6M6 6l12 12"
                       ></path>
                     </svg>
@@ -184,22 +182,26 @@ const Footer = () => {
           </div>
 
           <div>
-            <p className="font-semibold text-gray-800 dark:text-white">
-              Customer Support
-            </p>
+            <p className="font-semibold text-black">Customer Support</p>
 
             <div className="flex flex-col items-start mt-5 space-y-2">
-              <p className="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:cursor-pointer hover:text-blue-500">
+              <a
+                href="/returnForm"
+                className="text-black transition-colors duration-300 hover:underline hover:cursor-pointer hover:text-white"
+              >
                 Product Return Form
-              </p>
-              <p className="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:cursor-pointer hover:text-blue-500">
+              </a>
+              <a
+                href="/contact"
+                className="text-black transition-colors duration-300 hover:underline hover:cursor-pointer hover:text-white"
+              >
                 Contact
-              </p>
+              </a>
               <a
                 href="https://anpc.ro/?ref=footer_3_6"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 transition-colors duration-300 dark:text-gray-300 dark:hover:text-blue-400 hover:underline hover:cursor-pointer hover:text-blue-500"
+                className="text-black transition-colors duration-300 hover:underline hover:cursor-pointer hover:text-white"
               >
                 ANPC
               </a>
@@ -207,58 +209,50 @@ const Footer = () => {
           </div>
         </div>
 
-        <hr className="my-6 border-gray-200 md:my-8 dark:border-gray-700 h-2" />
+        <hr className="my-6 border-gray-200 md:my-8 h-2" />
 
         <div className="sm:flex sm:items-center sm:justify-between">
           <div className="flex gap-4 hover:cursor-pointer">
-            <img
-              src="https://www.svgrepo.com/show/303114/facebook-3-logo.svg"
-              width="30"
-              height="30"
-              alt="fb"
-            />
-            <img
-              src="https://www.svgrepo.com/show/303115/twitter-3-logo.svg"
-              width="30"
-              height="30"
-              alt="tw"
-            />
-            <img
-              src="https://www.svgrepo.com/show/303145/instagram-2-1-logo.svg"
-              width="30"
-              height="30"
-              alt="inst"
-            />
-            <img
-              src="https://www.svgrepo.com/show/94698/github.svg"
-              className=""
-              width="30"
-              height="30"
-              alt="gt"
-            />
-            <img
-              src="https://www.svgrepo.com/show/22037/path.svg"
-              width="30"
-              height="30"
-              alt="pn"
-            />
-            <img
-              src="https://www.svgrepo.com/show/28145/linkedin.svg"
-              width="30"
-              height="30"
-              alt="in"
-            />
-            <img
-              src="https://www.svgrepo.com/show/22048/dribbble.svg"
-              className=""
-              width="30"
-              height="30"
-              alt="db"
-            />
+            <a
+              href="https://www.facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="https://www.svgrepo.com/show/303114/facebook-3-logo.svg"
+                width="30"
+                height="30"
+                alt="fb"
+              />
+            </a>
+            <a
+              href="https://www.twitter.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="https://www.svgrepo.com/show/303115/twitter-3-logo.svg"
+                width="30"
+                height="30"
+                alt="tw"
+              />
+            </a>
+            <a
+              href="https://www.instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="https://www.svgrepo.com/show/303145/instagram-2-1-logo.svg"
+                width="30"
+                height="30"
+                alt="inst"
+              />
+            </a>
           </div>
         </div>
         <p className="font-sans p-8 text-start md:text-center md:text-lg md:p-4">
-          © 2023 You Company Inc. All rights reserved.
+          © 2023 Clean Code. All rights reserved.
         </p>
       </div>
     </footer>

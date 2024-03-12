@@ -6,6 +6,14 @@ const AboutUs = () => {
         <div>
             <Header/>
             Heloooooooooooooooooooooooooooooooooooo
+            ooooooooooooooooooooooooooooooooooooooooooooooooooo
+            ooooooooooooooooooooooooooooooooooooooooooooooooooooo
+            ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+            oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+            ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+            ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
+            000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+            ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo
             <Footer/>
         </div>
     )
