@@ -47,7 +47,7 @@ const Footer = () => {
   function addUserMessage(message) {
     const messageElement = document.createElement("div");
     messageElement.classList.add("mb-2", "text-right");
-    messageElement.innerHTML = `<p className="bg-primary-100 text-white rounded-lg py-2 px-4 inline-block">${message}</p>`;
+    messageElement.innerHTML = `<p class="bg-primary-100 text-white rounded-lg py-2 px-4 inline-block">${message}</p>`;
     chatbox.appendChild(messageElement);
     chatbox.scrollTop = chatbox.scrollHeight;
   }
@@ -55,7 +55,7 @@ const Footer = () => {
   function addBotMessage(message) {
     const messageElement = document.createElement("div");
     messageElement.classList.add("mb-2");
-    messageElement.innerHTML = `<p className="bg-gray-200 text-black rounded-lg py-2 px-4 inline-block">${message}</p>`;
+    messageElement.innerHTML = `<p class="bg-gray-200 text-black rounded-lg py-2 px-4 inline-block">${message}</p>`;
     chatbox.appendChild(messageElement);
     chatbox.scrollTop = chatbox.scrollHeight;
   }
@@ -115,7 +115,7 @@ const Footer = () => {
                 Terms and Conditions
               </a>
             </div>
-            <div className="fixed bottom-24 right-8 mb-4 mr-4">
+            <div className="fixed bottom-0 right-8 mb-4 mr-4">
               <button
                 id="open-chat"
                 className="bg-primary-200 text-white py-2 px-4 rounded-md hover:bg-primary-300 transition duration-300 flex items-center"
@@ -164,38 +164,7 @@ const Footer = () => {
                     </svg>
                   </button>
                 </div>
-                <div id="chatbox" className="p-4 h-80 overflow-y-auto">
-                  <div className="mb-2 text-right">
-                    <p className="bg-primary-100 text-white rounded-lg py-2 px-4 inline-block">
-                      hello
-                    </p>
-                  </div>
-                  <div className="mb-2">
-                    <p className="bg-gray-200 text-black rounded-lg py-2 px-4 inline-block">
-                      This is a response from the chatbot.
-                    </p>
-                  </div>
-                  <div className="mb-2 text-right">
-                    <p className="bg-primary-100 text-white rounded-lg py-2 px-4 inline-block">
-                      this example of chat
-                    </p>
-                  </div>
-                  <div className="mb-2">
-                    <p className="bg-gray-200 text-black rounded-lg py-2 px-4 inline-block">
-                      This is a response from the chatbot.
-                    </p>
-                  </div>
-                  <div className="mb-2 text-right">
-                    <p className="bg-primary-100 text-white rounded-lg py-2 px-4 inline-block">
-                      design with tailwind
-                    </p>
-                  </div>
-                  <div className="mb-2">
-                    <p className="bg-gray-200 text-black rounded-lg py-2 px-4 inline-block">
-                      This is a response from the chatbot.
-                    </p>
-                  </div>
-                </div>
+                <div id="chatbox" className="p-4 h-80 overflow-y-auto"></div>
                 <div className="p-4 border-t flex">
                   <input
                     id="user-input"
