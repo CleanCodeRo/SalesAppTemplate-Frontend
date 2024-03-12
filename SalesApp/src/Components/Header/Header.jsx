@@ -594,7 +594,7 @@ const Header = () => {
 
                 {/* Cart */}
                 <div className="ml-4 flow-root lg:ml-6 relative">
-                  <a className="group -m-2 flex items-center p-2 relative cursor-pointer">
+                  <div className="group -m-2 flex items-center p-2 relative cursor-pointer">
                     <div className="relative inline-block">
                       <ShoppingBagIcon
                         className="h-6 w-6 text-black hover:text-black"
@@ -695,12 +695,7 @@ const Header = () => {
                           <div className="p-4 justify-center flex bg-white">
                             <Link to="/checkout">
                             <button
-                              className="text-base undefined hover:scale-110 focus:outline-none flex justify-center px-4 py-2 rounded font-bold cursor-pointer 
-        hover:bg-teal-700 hover:text-teal-100 
-        bg-teal-100 
-        text-teal-700 
-        border duration-200 ease-in-out 
-        border-teal-600 transition"
+                              className="text-base undefined hover:scale-110 focus:outline-none flex justify-center px-4 py-2 rounded font-bold cursor-pointer hover:bg-teal-700 hover:text-teal-100 bg-teal-100 text-teal-700 border duration-200 ease-in-out border-teal-600 transition"
                             >
                               Checkout {products.reduce((acc, product) => acc + product.price, 0).toFixed(2)}$
                             </button>
@@ -709,7 +704,7 @@ const Header = () => {
                         </div>
                       </div>
                     </div>
-                  </a>
+                  </div>
                 </div>
               </div>
             </div>
