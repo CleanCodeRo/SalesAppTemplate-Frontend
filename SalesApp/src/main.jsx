@@ -9,6 +9,7 @@ import SignIn from './Components/SignIn/SignIn';
 import CreateAccount from './Components/CreateAccount/CreateAccount';
 import Product from './Components/Products/ProductPage/ProductPage';
 import AboutUs from './Components/AboutUs/AboutUs';
+import CartCheckout from './Components/CartCheckout/CartCheckout';
 
 const Main = () => {
   return (
@@ -27,6 +28,9 @@ const Main = () => {
       </Routes>
       <Routes>
         <Route path="/aboutUs" element={<AboutUs />} />
+      </Routes>
+      <Routes>
+        <Route path="/checkout" element={<CartCheckout />} />
       </Routes>
     </BrowserRouter>
   );

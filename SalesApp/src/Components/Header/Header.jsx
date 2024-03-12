@@ -10,6 +10,7 @@ import classNames from "classnames";
 import state from "../Atom/Atom";
 import { useAtom } from "jotai";
 import productList from '/products.json';
+import { Link } from "react-router-dom";
 
 const navigation = {
   categories: [
@@ -683,6 +684,7 @@ const Header = () => {
                           </div>                          
                           ))}
                           <div className="p-4 justify-center flex bg-white">
+                            <Link to="/checkout">
                             <button
                               className="text-base undefined hover:scale-110 focus:outline-none flex justify-center px-4 py-2 rounded font-bold cursor-pointer 
         hover:bg-teal-700 hover:text-teal-100 
@@ -693,6 +695,7 @@ const Header = () => {
                             >
                               Checkout {products.reduce((acc, product) => acc + product.price, 0).toFixed(2)}$
                             </button>
+                            </Link>
                           </div>
                         </div>
                       </div>
