@@ -1,7 +1,24 @@
 import Header from "../../Header/Header";
 import Footer from "../../Footer/Footer";
+import { useState } from "react";
+import ReviewForm from "./ReviewForm";
 
 const Product = () => {
+  const [currentTab, setCurrentTab] = useState("description");
+  const [showForm, setShowForm] = useState(false);
+
+  const handleTabChange = (tab) => {
+    setCurrentTab(tab);
+  };
+
+  const handleOpenForm = () => {
+    setShowForm(true);
+  };
+
+  const handleCloseForm = () => {
+    setShowForm(false);
+  };
+
   return (
     <div id="container" className=" pt-24">
       <Header />
@@ -168,7 +185,7 @@ const Product = () => {
                   </svg>
                 </div>
                 <p className="ml-2 text-sm font-medium text-gray-500">
-                  1,209 Reviews
+                  X Reviews
                 </p>
               </div>
 
@@ -187,11 +204,11 @@ const Product = () => {
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
-                    stroke-width="2"
+                    strokeWidth="2"
                   >
                     <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                       d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
                     />
                   </svg>
@@ -209,9 +226,9 @@ const Product = () => {
                     stroke="currentColor"
                   >
                     <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                       className=""
                     ></path>
@@ -228,9 +245,9 @@ const Product = () => {
                     stroke="currentColor"
                   >
                     <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"
                       className=""
                     ></path>
@@ -243,47 +260,140 @@ const Product = () => {
             <div className="lg:col-span-3">
               <div className="border-b border-gray-300">
                 <nav className="flex gap-4">
-                  <a
-                    href="#"
-                    title=""
-                    className="border-b-2 border-gray-900 py-4 text-sm font-medium text-gray-900 hover:border-gray-400 hover:text-gray-800"
+                  <div
+                    className={`border-b-2 py-4 text-sm font-medium cursor-pointer ${
+                      currentTab === "description"
+                        ? "border-gray-900 text-gray-900 hover:border-gray-400 hover:text-gray-800"
+                        : "border-transparent text-gray-600"
+                    }`}
+                    onClick={() => handleTabChange("description")}
                   >
-                    {" "}
-                    Description{" "}
-                  </a>
+                    Description
+                  </div>
 
-                  <a
-                    href="#"
-                    title=""
-                    className="inline-flex items-center border-b-2 border-transparent py-4 text-sm font-medium text-gray-600"
+                  <div
+                    className={`inline-flex items-center border-b-2 border-transparent py-4 text-sm font-medium cursor-pointer ${
+                      currentTab === "reviews"
+                        ? "border-gray-900 text-gray-900 hover:border-gray-400 hover:text-gray-800"
+                        : "text-gray-600"
+                    }`}
+                    onClick={() => handleTabChange("reviews")}
                   >
                     Reviews
                     <span className="ml-2 block rounded-full bg-gray-500 px-2 py-px text-xs font-bold text-gray-100">
-                      {" "}
-                      1,209{" "}
+                      X
                     </span>
-                  </a>
+                  </div>
                 </nav>
               </div>
 
               <div className="mt-8 flow-root sm:mt-12">
-                <h1 className="text-3xl font-bold">Delivered To Your Door</h1>
-                <p className="mt-4">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
-                  accusantium nesciunt fuga.
-                </p>
-                <h1 className="mt-8 text-3xl font-bold">
-                  From the Fine Farms of Brazil
-                </h1>
-                <p className="mt-4">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio
-                  numquam enim facere.
-                </p>
-                <p className="mt-4">
-                  Amet consectetur adipisicing elit. Optio numquam enim facere.
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Dolore rerum nostrum eius facere, ad neque.
-                </p>
+                {currentTab === "description" && (
+                  <>
+                    <h1 className="text-3xl font-bold">
+                      Delivered To Your Door
+                    </h1>
+                    <p className="mt-4">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Quia accusantium nesciunt fuga.
+                    </p>
+                    <h1 className="mt-8 text-3xl font-bold">
+                      From the Fine Farms of Brazil
+                    </h1>
+                    <p className="mt-4">
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                      Optio numquam enim facere.
+                    </p>
+                    <p className="mt-4">
+                      Amet consectetur adipisicing elit. Optio numquam enim
+                      facere. Lorem ipsum dolor sit amet consectetur,
+                      adipisicing elit. Dolore rerum nostrum eius facere, ad
+                      neque.
+                    </p>
+                  </>
+                )}
+
+                {currentTab === "reviews" && (
+                  // render  reviews here
+                  <div className="max-w-2xl mx-auto">
+                    <article>
+                      <div className="flex items-center mb-4">
+                        <div className="font-medium text-black">
+                          <p>Jese Leos </p>
+                        </div>
+                      </div>
+                      <div className="flex items-center mb-1 space-x-1 rtl:space-x-reverse">
+                        <svg
+                          className="w-4 h-4 text-yellow-300"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="currentColor"
+                          viewBox="0 0 22 20"
+                        >
+                          <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                        </svg>
+                        <svg
+                          className="w-4 h-4 text-yellow-300"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="currentColor"
+                          viewBox="0 0 22 20"
+                        >
+                          <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                        </svg>
+                        <svg
+                          className="w-4 h-4 text-yellow-300"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="currentColor"
+                          viewBox="0 0 22 20"
+                        >
+                          <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                        </svg>
+                        <svg
+                          className="w-4 h-4 text-yellow-300"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="currentColor"
+                          viewBox="0 0 22 20"
+                        >
+                          <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                        </svg>
+                        <svg
+                          className="w-4 h-4 text-gray-300"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="currentColor"
+                          viewBox="0 0 22 20"
+                        >
+                          <path d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z" />
+                        </svg>
+                        <h3 className="ms-2 text-sm font-semibold text-gray-900">
+                          Thinking to buy another one!
+                        </h3>
+                      </div>
+                      <p className="mb-2 text-black">
+                        This is my third Invicta Pro Diver. They are just
+                        fantastic value for money. This one arrived yesterday
+                        and the first thing I did was set the time, popped on an
+                        identical strap from another Invicta and went in the
+                        shower with it to test the waterproofing.... No
+                        problems. It is obviously not the same build quality as
+                        those very expensive watches. But that is like comparing
+                        a Citroën to a Ferrari. This watch was well under £100!
+                        An absolute bargain.
+                      </p>
+                    </article>
+                    <button
+                      type="button"
+                      onClick={handleOpenForm}
+                      className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-white focus:outline-none bg-primary-100 rounded-lg border  hover:bg-primary-200 focus:z-10 focus:ring-4 focus:ring-gray-100"
+                    >
+                      Add review
+                    </button>
+                    {showForm && <ReviewForm onClose={handleCloseForm} />}
+                  </div>
+                )}
               </div>
             </div>
           </div>

@@ -8,6 +8,7 @@ import Homepage from './Components/Homepage/Homepage';
 import SignIn from './Components/SignIn/SignIn';
 import CreateAccount from './Components/CreateAccount/CreateAccount';
 import Product from './Components/Products/ProductPage/ProductPage';
+import AboutUs from './Components/AboutUs/AboutUs';
 
 const Main = () => {
   return (
@@ -23,6 +24,9 @@ const Main = () => {
       </Routes>
       <Routes>
         <Route path="/product" element={<Product />} />
+      </Routes>
+      <Routes>
+        <Route path="/aboutUs" element={<AboutUs />} />
       </Routes>
     </BrowserRouter>
   );
