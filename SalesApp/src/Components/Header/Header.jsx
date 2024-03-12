@@ -9,6 +9,7 @@ import {
 import classNames from "classnames";
 import state from "../Atom/Atom";
 import { useAtom } from "jotai";
+import productList from '/products.json';
 
 const navigation = {
   categories: [
@@ -145,6 +146,7 @@ const Header = () => {
   const [showCartProducts, setShowCartProducts] = useState(false);
   const [isPhoneResoluton, setIsPhoneResolution] = useState(false);
   const [openSearchBar, setOpenSearchBar] = useState(false);
+  const [products, setProducts] = useState(productList.products);
 
   const handleMouseMove = (e) => {
     const x = e.clientX;
@@ -195,6 +197,10 @@ const Header = () => {
     // Cleanup function to clear the timeout on component unmount
     return () => clearTimeout(delay);
   }, []);
+
+  useEffect(() => {
+    console.log(products);
+  }, products)
 
   return (
     <div>
@@ -561,7 +567,7 @@ const Header = () => {
                       <div className="relative">
                         <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                           <svg
-                            className="w-4 h-4 text-gray-500 dark:text-gray-400"
+                            class="w-4 h-4 text-gray-500"
                             aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
@@ -579,7 +585,7 @@ const Header = () => {
                         <input
                           type="search"
                           id="default-search"
-                          className="h-10 block p-4 ps-10 text-sm rounded-full text-gray-900 border border-gray-300 bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                          class="h-10 block p-4 ps-10 text-sm rounded-full text-gray-900 border border-primary-100 bg-gray-50 focus:ring-primary-300 focus:border-primary-300 focus:outline-none focus:border-2"
                           placeholder="Search Mockups, Logos..."
                           required
                         />
@@ -636,6 +642,7 @@ const Header = () => {
                       </div>
                       <div className="absolute w-full rounded-b border-t-0 z-10">
                         <div id="listElement" className="shadow-xl">
+                          {products.map((product, index) => (
                           <div className="p-2 flex bg-white hover:bg-gray-100 cursor-pointer border-b border-gray-100">
                             <div className="p-2 w-12">
                               <img
@@ -644,11 +651,11 @@ const Header = () => {
                               />
                             </div>
                             <div className="flex-auto text-sm w-32">
-                              <div className="font-bold">Product 1</div>
+                              <div className="font-bold">{product.name}</div>
                               <div className="truncate">
-                                Product 1 description
+                                {product.description}
                               </div>
-                              <div className="text-gray-400">Qt: 2</div>
+                              <div className="text-gray-400">{product.quantity}</div>
                             </div>
                             <div className="flex flex-col w-18 font-medium items-end">
                               <div className="w-4 h-4 mb-6 hover:bg-red-200 rounded-full cursor-pointer text-red-700">
@@ -662,7 +669,8 @@ const Header = () => {
                                   strokeWidth="2"
                                   strokeLinecap="round"
                                   strokeLinejoin="round"
-                                  className="feather feather-trash-2 "
+                                  className="feather feather-trash-2"
+                                  onClick={() => setProducts(products.filter((p) => p.id !== product.id))}
                                 >
                                   <polyline points="3 6 5 6 21 6"></polyline>
                                   <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
@@ -670,83 +678,10 @@ const Header = () => {
                                   <line x1="14" y1="11" x2="14" y2="17"></line>
                                 </svg>
                               </div>
-                              $12.22
+                              {product.price}
                             </div>
-                          </div>
-                          <div className="p-2 flex bg-white hover:bg-gray-100 cursor-pointer border-b border-gray-100">
-                            <div className="p-2 w-12">
-                              <img
-                                src="https://dummyimage.com/50x50/bababa/0011ff&amp;text=50x50"
-                                alt="img product"
-                              />
-                            </div>
-                            <div className="flex-auto text-sm w-32">
-                              <div className="font-bold">Product 1</div>
-                              <div className="truncate">
-                                Product 1 description
-                              </div>
-                              <div className="text-gray-400">Qt: 2</div>
-                            </div>
-                            <div className="flex flex-col w-18 font-medium items-end">
-                              <div className="w-4 h-4 mb-6 hover:bg-red-200 rounded-full cursor-pointer text-red-700">
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  width="100%"
-                                  height="100%"
-                                  fill="none"
-                                  viewBox="0 0 24 24"
-                                  stroke="currentColor"
-                                  strokeWidth="2"
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  className="feather feather-trash-2 "
-                                >
-                                  <polyline points="3 6 5 6 21 6"></polyline>
-                                  <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-                                  <line x1="10" y1="11" x2="10" y2="17"></line>
-                                  <line x1="14" y1="11" x2="14" y2="17"></line>
-                                </svg>
-                              </div>
-                              $12.22
-                            </div>
-                          </div>
-                          <div className="p-2 flex bg-white hover:bg-gray-100 cursor-pointer border-b border-gray-100">
-                            <div className="p-2 w-12">
-                              <img
-                                src="https://dummyimage.com/50x50/bababa/0011ff&amp;text=50x50"
-                                alt="img product"
-                              />
-                            </div>
-                            <div className="flex-auto text-sm w-32">
-                              <div className="font-bold">Product 1</div>
-                              <div className="truncate">
-                                Product 1 description
-                              </div>
-                              <div className="text-gray-400">Qt: 2</div>
-                            </div>
-                            <div className="flex flex-col w-18 font-medium items-end">
-                              <div className="w-4 h-4 mb-6 hover:bg-red-200 rounded-full cursor-pointer text-red-700">
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  width="100%"
-                                  height="100%"
-                                  fill="none"
-                                  viewBox="0 0 24 24"
-                                  stroke="currentColor"
-                                  strokeWidth="2"
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  className="feather feather-trash-2 "
-                                >
-                                  <polyline points="3 6 5 6 21 6"></polyline>
-                                  <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
-                                  <line x1="10" y1="11" x2="10" y2="17"></line>
-                                  <line x1="14" y1="11" x2="14" y2="17"></line>
-                                </svg>
-                              </div>
-                              $12.22
-                            </div>
-                          </div>
+                          </div>                          
+                          ))}
                           <div className="p-4 justify-center flex bg-white">
                             <button
                               className="text-base undefined hover:scale-110 focus:outline-none flex justify-center px-4 py-2 rounded font-bold cursor-pointer 
@@ -756,7 +691,7 @@ const Header = () => {
         border duration-200 ease-in-out 
         border-teal-600 transition"
                             >
-                              Checkout $36.66
+                              Checkout {products.reduce((acc, product) => acc + product.price, 0).toFixed(2)}$
                             </button>
                           </div>
                         </div>
