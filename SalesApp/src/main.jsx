@@ -11,6 +11,7 @@ import Product from './Components/Products/ProductPage/ProductPage';
 import AboutUs from './Components/AboutUs/AboutUs';
 import CartCheckout from './Components/CartCheckout/CartCheckout';
 import TermsAndConditions from './Components/TermsAndConditions/TermsAndConditions';
+import ProductReturnForm from './Components/ProductReturnForm/ProductReturnForm';
 
 const Main = () => {
   return (
@@ -35,6 +36,9 @@ const Main = () => {
       </Routes>
       <Routes>
         <Route path="/termsAndConditions" element={<TermsAndConditions />} />
+      </Routes>
+      <Routes>
+        <Route path="/returnForm" element={<ProductReturnForm />} />
       </Routes>
     </BrowserRouter>
   );

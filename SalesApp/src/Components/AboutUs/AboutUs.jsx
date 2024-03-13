@@ -6,7 +6,7 @@ const AboutUs = () => {
   return (
     <div>
       <Header />
-      <div className="w-full h-screen overflow-hidden relative before:block before:absolute before:bg-black before:h-full before:w-full before:top-0 before:left-0 before:z-10 before:opacity-30">
+      <div className="pt-36 w-full h-screen overflow-hidden relative before:block before:absolute before:bg-black before:h-full before:w-full before:top-0 before:left-0 before:z-10 before:opacity-30">
         <img
           src="/src/images/bg-about.png"
           className="absolute top-0 left-0 w-full min-h-full"

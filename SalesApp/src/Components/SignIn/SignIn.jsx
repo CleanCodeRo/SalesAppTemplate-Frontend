@@ -16,7 +16,7 @@ const SignIn = () => {
           />
         </div>
         {/* <!-- Right: Login Form --> */}
-        <div className="lg:p-36 md:p-52 sm:20 p-8 w-full lg:w-1/2 z-10">
+        <div className="lg:p-36 md:p-52 sm:20 p-8 w-full lg:w-1/2 ">
           <h1 className="text-2xl font-semibold mb-4">Login</h1>
           <form method="POST">
             {/* <!-- email Input --> */}

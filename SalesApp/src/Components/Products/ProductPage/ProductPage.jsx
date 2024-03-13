@@ -20,12 +20,12 @@ const Product = () => {
   };
 
   return (
-    <div id="container" className=" pt-24">
+    <div id="container" className="pt-36">
       <Header />
       <section className="py-12 sm:py-16">
         <div className="container mx-auto px-4">
           <nav className="flex">
-            <ol role="list" className="flex items-center z-10">
+            <ol role="list" className="flex items-center ">
               <li className="text-left">
                 <div className="-m-1">
                   <a
@@ -73,7 +73,7 @@ const Product = () => {
 
           <div className="lg:col-gap-12 xl:col-gap-16 mt-8 grid grid-cols-1 gap-12 lg:mt-12 lg:grid-cols-5 lg:gap-16">
             <div className="lg:col-span-3 lg:row-end-1">
-              <div className="lg:flex lg:items-start z-10">
+              <div className="lg:flex lg:items-start ">
                 <div className="lg:order-2 lg:ml-5">
                   <div className="max-w-xl overflow-hidden rounded-lg">
                     <img
@@ -196,7 +196,7 @@ const Product = () => {
 
                 <button
                   type="button"
-                  className="z-10 inline-flex items-center justify-center rounded-md border-2 border-transparent bg-primary-100  px-12 py-3 text-center text-base font-bold text-white transition-all duration-200 ease-in-out focus:shadow hover:bg-primary-200"
+                  className=" inline-flex items-center justify-center rounded-md border-2 border-transparent bg-primary-100  px-12 py-3 text-center text-base font-bold text-white transition-all duration-200 ease-in-out focus:shadow hover:bg-primary-200"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -257,11 +257,11 @@ const Product = () => {
               </ul>
             </div>
 
-            <div className="lg:col-span-3 z-10">
+            <div className="lg:col-span-3 ">
               <div className="border-b border-gray-300">
                 <nav className="flex gap-4">
                   <div
-                    className={`border-b-2 py-4 text-sm font-medium cursor-pointer z-10 ${
+                    className={`border-b-2 py-4 text-sm font-medium cursor-pointer  ${
                       currentTab === "description"
                         ? "border-gray-900 text-gray-900 hover:border-gray-400 hover:text-gray-800"
                         : "border-transparent text-gray-600"
@@ -387,7 +387,7 @@ const Product = () => {
                     <button
                       type="button"
                       onClick={handleOpenForm}
-                      className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-white focus:outline-none bg-primary-100 rounded-lg border  hover:bg-primary-200 focus:z-10 focus:ring-4 focus:ring-gray-100"
+                      className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-white focus:outline-none bg-primary-100 rounded-lg border  hover:bg-primary-200 focus: focus:ring-4 focus:ring-gray-100"
                     >
                       Add review
                     </button>

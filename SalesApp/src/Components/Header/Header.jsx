@@ -208,6 +208,7 @@ const Header = () => {
       <div
         onMouseMove={handleMouseMove}
         className="w-full h-screen z-0 absolute"
+        style={{ zIndex: -1 }}
       ></div>
       {/* Mobile menu */}
       <Transition.Root show={open} as={Fragment}>
@@ -575,8 +576,8 @@ const Header = () => {
                       <input
                         type="search"
                         id="default-search"
-                        className="h-10 block p-4 ps-10 text-sm rounded-full text-black border border-primary-100 bg-gray-50 focus:ring-primary-300 focus:border-primary-300 focus:outline-none focus:border-2"
-                        placeholder="Search Mockups, Logos..."
+                        className="h-10 block p-4 ps-10 text-sm rounded-full text-black border border-transparent bg-gray-50 focus:ring-primary-300 focus:border-primary-300 focus:outline-none focus:border-2"
+                        placeholder="Search..."
                         required
                       />
                     </div>
@@ -694,11 +695,16 @@ const Header = () => {
                           ))}
                           <div className="p-4 justify-center flex bg-white">
                             <Link to="/checkout">
-                            <button
-                              className="text-base undefined hover:scale-110 focus:outline-none flex justify-center px-4 py-2 rounded font-bold cursor-pointer hover:bg-teal-700 hover:text-teal-100 bg-teal-100 text-teal-700 border duration-200 ease-in-out border-teal-600 transition"
-                            >
-                              Checkout {products.reduce((acc, product) => acc + product.price, 0).toFixed(2)}$
-                            </button>
+                              <button className="text-base undefined hover:scale-110 focus:outline-none flex justify-center px-4 py-2 rounded font-bold cursor-pointer hover:bg-teal-700 hover:text-teal-100 bg-teal-100 text-teal-700 border duration-200 ease-in-out border-teal-600 transition">
+                                Checkout{" "}
+                                {products
+                                  .reduce(
+                                    (acc, product) => acc + product.price,
+                                    0
+                                  )
+                                  .toFixed(2)}
+                                $
+                              </button>
                             </Link>
                           </div>
                         </div>
