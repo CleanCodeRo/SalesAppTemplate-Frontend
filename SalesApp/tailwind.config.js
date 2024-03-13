@@ -1,7 +1,17 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "node_modules/flowbite-react/lib/esm/**/*.js",
+  ],
   theme: {
+    screens: {
+      "3xl": "1800px",
+      "2xl": "1500px",
+      "xl": "1200px",
+      "md": "650px",
+    },
     extend: {
       colors: {
         primary: {
@@ -16,5 +26,5 @@ export default {
       },
     },
   },
-  plugins: [require("@tailwindcss/aspect-ratio")],
+  plugins: [require("@tailwindcss/aspect-ratio"), require("flowbite/plugin")],
 };
