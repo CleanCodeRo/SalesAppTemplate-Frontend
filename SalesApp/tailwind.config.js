@@ -6,12 +6,6 @@ export default {
     "node_modules/flowbite-react/lib/esm/**/*.js",
   ],
   theme: {
-    screens: {
-      "3xl": "1800px",
-      "2xl": "1500px",
-      "xl": "1200px",
-      "md": "650px",
-    },
     extend: {
       colors: {
         primary: {

@@ -12,6 +12,7 @@ import AboutUs from './Components/AboutUs/AboutUs';
 import CartCheckout from './Components/CartCheckout/CartCheckout';
 import TermsAndConditions from './Components/TermsAndConditions/TermsAndConditions';
 import ProductReturnForm from './Components/ProductReturnForm/ProductReturnForm';
+import ContactForm from './Components/ContactForm/ContactForm';
 
 const Main = () => {
   return (
@@ -39,6 +40,9 @@ const Main = () => {
       </Routes>
       <Routes>
         <Route path="/returnForm" element={<ProductReturnForm />} />
+      </Routes>
+      <Routes>
+        <Route path="/contact" element={<ContactForm />} />
       </Routes>
     </BrowserRouter>
   );
