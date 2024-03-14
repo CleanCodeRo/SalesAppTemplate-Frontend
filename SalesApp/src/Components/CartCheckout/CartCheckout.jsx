@@ -16,7 +16,7 @@ const CartCheckout = () => {
       <Header />
       <div className="cartCheckoutMargin">
         <section>
-          <div className="grid 3xl:grid-cols-4 xl:grid-cols-6 px-20 mx-auto">
+          <div className="grid 3xl:grid-cols-4 xl:grid-cols-6 extra_sm:px-20 pr-8 mx-auto">
             <div className="col-span-1"></div>
             <div className="3xl:col-span-2 xl:col-span-4">
               <div className="3xl:grid 3xl:grid-cols-4 3xl:gap-4 h-2/3">
@@ -29,23 +29,22 @@ const CartCheckout = () => {
                       <div className="w-full h-40 border rounded-2xl m-4 grid grid-cols-5">
                         <div className="col-span-1">
                           <img
-                            className="md:h-40 md:w-40 h-24 w-24 p-2 rounded-2xl relative "
+                            className="md:h-40 md:w-40 h-24 w-24 p-2 rounded-2xl sm:relative absolute top-0 left-4 sm:left-0 "
                             src="/src/images/bg-login.png"
                             alt=""
                           />
                         </div>
-                        <div className="col-span-3 grid grid-rows-4">
+                        <div className="col-span-3 grid grid-rows-4 sm:left-0 left-28 sm:relative absolute">
                           <span className="pt-2 font-semibold">
                             {product.name}
                           </span>
-                          <span className="pt-2 row-span-3">
+                          {/* <span className="pt-2 row-span-3 text-xs">
                             {product.description}
-                          </span>
+                          </span> */}
                         </div>
-                        <div className="pt-2 col-span-1 md:col-start-5 col-start-1 text-end pr-2 grid grid-rows-5">
-                          {product.price} $z
-                          <div class="flex md:relative absolute md:left-0 md:bottom-0 left-6 bottom-7 h-8 md:justify-end items-stretch z-10">
-                            <button class="flex items-center justify-center rounded-l-md bg-primary-100 px-4 transition hover:bg-primary-200 hover:text-white w-2 text-white">
+                        <div className="pt-2 col-span-1 md:col-start-5 col-start-1 text-end pr-2 grid grid-rows-5">                      
+                          <div class="flex md:relative absolute md:left-0 md:bottom-0 left-6 bottom-2 h-8 md:justify-end items-stretch z-10">                            
+                            <button class="flex items-center justify-center rounded-l-md bg-primary-100 px-4 transition hover:bg-primary-200 hover:text-white w-2 text-white">                                                           
                               -
                             </button>
                             <div class="flex items-center justify-center text black bg-gray-100 px-4 text-xs uppercase transition w-2">
@@ -55,6 +54,8 @@ const CartCheckout = () => {
                               +
                             </button>
                           </div>
+                          <div className="md:relative absolute top-2 right-0"> {product.price} $</div>
+                          
                           <button className="right-0 absolute bottom-0">
                           <svg
                             fill="#000000"
