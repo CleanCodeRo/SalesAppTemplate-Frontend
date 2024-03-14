@@ -16,9 +16,9 @@ const SignIn = () => {
           />
         </div>
         {/* <!-- Right: Login Form --> */}
-        <div className="lg:p-36 md:p-52 sm:20 p-8 w-full lg:w-1/2 z-10">
+        <div className="lg:p-36 md:p-52 sm:20 p-8 w-full lg:w-1/2 ">
           <h1 className="text-2xl font-semibold mb-4">Login</h1>
-          <form action="#" method="POST">
+          <form method="POST">
             {/* <!-- email Input --> */}
             <div className="mb-4">
               <label for="email" className="block text-black">
@@ -59,7 +59,7 @@ const SignIn = () => {
             </div>
             {/* <!-- Forgot Password Link --> */}
             <div className="mb-6 text-primary-100 font-bold">
-              <a href="#" className="hover:underline">
+              <a href="/forgotPassword" className="hover:underline">
                 Forgot Password?
               </a>
             </div>

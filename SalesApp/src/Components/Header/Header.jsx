@@ -20,7 +20,7 @@ const navigation = {
       featured: [
         {
           name: "New Arrivals",
-          href: "#",
+          href: "/",
           imageSrc:
             "https://tailwindui.com/img/ecommerce-images/mega-menu-category-01.jpg",
           imageAlt:
@@ -28,7 +28,7 @@ const navigation = {
         },
         {
           name: "Basic Tees",
-          href: "#",
+          href: "/",
           imageSrc:
             "https://tailwindui.com/img/ecommerce-images/mega-menu-category-02.jpg",
           imageAlt:
@@ -40,38 +40,38 @@ const navigation = {
           id: "clothing",
           name: "Clothing",
           items: [
-            { name: "Tops", href: "#" },
-            { name: "Dresses", href: "#" },
-            { name: "Pants", href: "#" },
-            { name: "Denim", href: "#" },
-            { name: "Sweaters", href: "#" },
-            { name: "T-Shirts", href: "#" },
-            { name: "Jackets", href: "#" },
-            { name: "Activewear", href: "#" },
-            { name: "Browse All", href: "#" },
+            { name: "Tops", href: "/" },
+            { name: "Dresses", href: "/" },
+            { name: "Pants", href: "/" },
+            { name: "Denim", href: "/" },
+            { name: "Sweaters", href: "/" },
+            { name: "T-Shirts", href: "/" },
+            { name: "Jackets", href: "/" },
+            { name: "Activewear", href: "/" },
+            { name: "Browse All", href: "/" },
           ],
         },
         {
           id: "accessories",
           name: "Accessories",
           items: [
-            { name: "Watches", href: "#" },
-            { name: "Wallets", href: "#" },
-            { name: "Bags", href: "#" },
-            { name: "Sunglasses", href: "#" },
-            { name: "Hats", href: "#" },
-            { name: "Belts", href: "#" },
+            { name: "Watches", href: "/" },
+            { name: "Wallets", href: "/" },
+            { name: "Bags", href: "/" },
+            { name: "Sunglasses", href: "/" },
+            { name: "Hats", href: "/" },
+            { name: "Belts", href: "/" },
           ],
         },
         {
           id: "brands",
           name: "Brands",
           items: [
-            { name: "Full Nelson", href: "#" },
-            { name: "My Way", href: "#" },
-            { name: "Re-Arranged", href: "#" },
-            { name: "Counterfeit", href: "#" },
-            { name: "Significant Other", href: "#" },
+            { name: "Full Nelson", href: "/" },
+            { name: "My Way", href: "/" },
+            { name: "Re-Arranged", href: "/" },
+            { name: "Counterfeit", href: "/" },
+            { name: "Significant Other", href: "/" },
           ],
         },
       ],
@@ -82,7 +82,7 @@ const navigation = {
       featured: [
         {
           name: "New Arrivals",
-          href: "#",
+          href: "/",
           imageSrc:
             "https://tailwindui.com/img/ecommerce-images/product-page-04-detail-product-shot-01.jpg",
           imageAlt:
@@ -90,7 +90,7 @@ const navigation = {
         },
         {
           name: "Artwork Tees",
-          href: "#",
+          href: "/",
           imageSrc:
             "https://tailwindui.com/img/ecommerce-images/category-page-02-image-card-06.jpg",
           imageAlt:
@@ -102,43 +102,43 @@ const navigation = {
           id: "clothing",
           name: "Clothing",
           items: [
-            { name: "Tops", href: "#" },
-            { name: "Pants", href: "#" },
-            { name: "Sweaters", href: "#" },
-            { name: "T-Shirts", href: "#" },
-            { name: "Jackets", href: "#" },
-            { name: "Activewear", href: "#" },
-            { name: "Browse All", href: "#" },
+            { name: "Tops", href: "/" },
+            { name: "Pants", href: "/" },
+            { name: "Sweaters", href: "/" },
+            { name: "T-Shirts", href: "/" },
+            { name: "Jackets", href: "/" },
+            { name: "Activewear", href: "/" },
+            { name: "Browse All", href: "/" },
           ],
         },
         {
           id: "accessories",
           name: "Accessories",
           items: [
-            { name: "Watches", href: "#" },
-            { name: "Wallets", href: "#" },
-            { name: "Bags", href: "#" },
-            { name: "Sunglasses", href: "#" },
-            { name: "Hats", href: "#" },
-            { name: "Belts", href: "#" },
+            { name: "Watches", href: "/" },
+            { name: "Wallets", href: "/" },
+            { name: "Bags", href: "/" },
+            { name: "Sunglasses", href: "/" },
+            { name: "Hats", href: "/" },
+            { name: "Belts", href: "/" },
           ],
         },
         {
           id: "brands",
           name: "Brands",
           items: [
-            { name: "Re-Arranged", href: "#" },
-            { name: "Counterfeit", href: "#" },
-            { name: "Full Nelson", href: "#" },
-            { name: "My Way", href: "#" },
+            { name: "Re-Arranged", href: "/" },
+            { name: "Counterfeit", href: "/" },
+            { name: "Full Nelson", href: "/" },
+            { name: "My Way", href: "/" },
           ],
         },
       ],
     },
   ],
   pages: [
-    { name: "Company", href: "#" },
-    { name: "Stores", href: "#" },
+    { name: "Company", href: "/aboutUs" },
+    // { name: "Stores", href: "/" },
   ],
 };
 
@@ -175,13 +175,13 @@ const Header = () => {
   const handleSearchClick = () => {
     setOpenSearchBar(!openSearchBar);
     const searchForm = document.getElementById("searchForm");
-    if(openSearchBar) {
-    setTimeout(() => {
-      searchForm.classList.add("w-0")
-    }, 500)
-      searchForm.classList.remove("w-0")
+    if (openSearchBar) {
+      setTimeout(() => {
+        searchForm.classList.add("w-0");
+      }, 500);
+      searchForm.classList.remove("w-0");
     }
-  }
+  };
 
   useEffect(() => {
     document.addEventListener("mousemove", handleMouseMove);
@@ -209,6 +209,7 @@ const Header = () => {
       <div
         onMouseMove={handleMouseMove}
         className="w-full h-screen z-0 absolute"
+        style={{ zIndex: -1 }}
       ></div>
       {/* Mobile menu */}
       <Transition.Root show={open} as={Fragment}>
@@ -239,7 +240,7 @@ const Header = () => {
                 <div className="flex px-4 pb-2 pt-5">
                   <button
                     type="button"
-                    className="relative -m-2 inline-flex items-center justify-center rounded-md p-2 text-gray-400"
+                    className="relative -m-2 inline-flex items-center justify-center rounded-md p-2 text-black"
                     onClick={() => setOpen(false)}
                   >
                     <span className="absolute -inset-0.5" />
@@ -258,8 +259,8 @@ const Header = () => {
                           className={({ selected }) =>
                             classNames(
                               selected
-                                ? "border-indigo-600 text-indigo-600"
-                                : "border-transparent text-gray-900",
+                                ? " text-primary-100"
+                                : "border-transparent text-black",
                               "flex-1 whitespace-nowrap border-b-2 px-1 py-4 text-base font-medium"
                             )
                           }
@@ -290,7 +291,7 @@ const Header = () => {
                               </div>
                               <a
                                 href={item.href}
-                                className="mt-6 block font-medium text-gray-900"
+                                className="mt-6 block font-medium text-black"
                               >
                                 <span
                                   className="absolute inset-0 z-10"
@@ -308,7 +309,7 @@ const Header = () => {
                           <div key={section.name}>
                             <p
                               id={`${category.id}-${section.id}-heading-mobile`}
-                              className="font-medium text-gray-900"
+                              className="font-medium text-black"
                             >
                               {section.name}
                             </p>
@@ -321,7 +322,7 @@ const Header = () => {
                                 <li key={item.name} className="flow-root">
                                   <a
                                     href={item.href}
-                                    className="-m-2 block p-2 text-gray-500"
+                                    className="-m-2 block p-2 text-black"
                                   >
                                     {item.name}
                                   </a>
@@ -340,7 +341,7 @@ const Header = () => {
                     <div key={page.name} className="flow-root">
                       <a
                         href={page.href}
-                        className="-m-2 block p-2 font-medium text-gray-900"
+                        className="-m-2 block p-2 font-medium text-black"
                       >
                         {page.name}
                       </a>
@@ -352,7 +353,7 @@ const Header = () => {
                   <div className="flow-root">
                     <a
                       href="/signIn"
-                      className="-m-2 block p-2 font-medium text-gray-900"
+                      className="-m-2 block p-2 font-medium text-black"
                     >
                       Sign in
                     </a>
@@ -360,25 +361,11 @@ const Header = () => {
                   <div className="flow-root">
                     <a
                       href="/createAccount"
-                      className="-m-2 block p-2 font-medium text-gray-900"
+                      className="-m-2 block p-2 font-medium text-black"
                     >
                       Create account
                     </a>
                   </div>
-                </div>
-
-                <div className="border-t border-gray-200 px-4 py-6">
-                  <a href="#" className="-m-2 flex items-center p-2">
-                    <img
-                      src="https://tailwindui.com/img/flags/flag-canada.svg"
-                      alt=""
-                      className="block h-auto w-5 flex-shrink-0"
-                    />
-                    <span className="ml-3 block text-base font-medium text-gray-900">
-                      CAD
-                    </span>
-                    <span className="sr-only">, change currency</span>
-                  </a>
                 </div>
               </Dialog.Panel>
             </Transition.Child>
@@ -398,7 +385,7 @@ const Header = () => {
             <div className="flex h-16 items-center">
               <button
                 type="button"
-                className="relative rounded-md bg-white p-2 text-gray-400 lg:hidden"
+                className="relative rounded-md bg-white p-2 text-black lg:hidden"
                 onClick={() => setOpen(true)}
               >
                 <span className="absolute -inset-0.5" />
@@ -429,8 +416,8 @@ const Header = () => {
                             <Popover.Button
                               className={classNames(
                                 open
-                                  ? "border-indigo-600 text-indigo-600"
-                                  : "border-transparent text-gray-700 hover:text-gray-800",
+                                  ? "text-primary-100"
+                                  : "border-transparent text-black hover:text-black",
                                 "relative z-10 -mb-px flex items-center border-b-2 pt-px text-sm font-medium transition-colors duration-200 ease-out"
                               )}
                             >
@@ -447,7 +434,7 @@ const Header = () => {
                             leaveFrom="opacity-100"
                             leaveTo="opacity-0"
                           >
-                            <Popover.Panel className="absolute inset-x-0 top-full text-sm text-gray-500">
+                            <Popover.Panel className="absolute inset-x-0 top-full text-sm text-black">
                               {/* Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow */}
                               <div
                                 className="absolute inset-0 top-1/2 bg-white shadow"
@@ -472,7 +459,7 @@ const Header = () => {
                                           </div>
                                           <a
                                             href={item.href}
-                                            className="mt-6 block font-medium text-gray-900"
+                                            className="mt-6 block font-medium text-black"
                                           >
                                             <span
                                               className="absolute inset-0 z-10"
@@ -494,7 +481,7 @@ const Header = () => {
                                         <div key={section.name}>
                                           <p
                                             id={`${section.name}-heading`}
-                                            className="font-medium text-gray-900"
+                                            className="font-medium text-black"
                                           >
                                             {section.name}
                                           </p>
@@ -510,7 +497,7 @@ const Header = () => {
                                               >
                                                 <a
                                                   href={item.href}
-                                                  className="hover:text-gray-800"
+                                                  className="hover:text-black"
                                                 >
                                                   {item.name}
                                                 </a>
@@ -534,7 +521,7 @@ const Header = () => {
                     <a
                       key={page.name}
                       href={page.href}
-                      className="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"
+                      className="flex items-center text-sm font-medium text-black  hover:text-gray-800 "
                     >
                       {page.name}
                     </a>
@@ -546,56 +533,58 @@ const Header = () => {
                 <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
                   <a
                     href="/signIn"
-                    className="text-sm font-medium text-gray-700 hover:text-gray-800"
+                    className="text-sm font-medium text-black hover:text-gray-800"
                   >
                     Sign in
                   </a>
                   <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
                   <a
                     href="/createAccount"
-                    className="text-sm font-medium text-gray-700 hover:text-gray-800"
+                    className="text-sm font-medium text-black hover:text-gray-800"
                   >
                     Create account
                   </a>
                 </div>
 
                 {/* Search */}
-                <div className="flex lg:ml-6">                  
-                    <form id="searchForm" className={`transition-all duration-500 ${
-                      openSearchBar ? " -translate-x-0 opacity-100 visible"
-                      : "translate-x-1 opacity-0 invisible"
+                <div className="flex lg:ml-6">
+                  <form
+                    id="searchForm"
+                    className={`transition-all duration-500 ${
+                      openSearchBar
+                        ? " -translate-x-0 opacity-100 visible"
+                        : "translate-x-1 opacity-0 invisible"
                     }`}
-                    >                  
-                      <div className="relative">
-                        <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-                          <svg
-                            class="w-4 h-4 text-gray-500"
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 20 20"
-                          >
-                            <path
-                              stroke="currentColor"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth="2"
-                              d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
-                            />
-                          </svg>
-                        </div>
-                        <input
-                          type="search"
-                          id="default-search"
-                          class="h-10 block p-4 ps-10 text-sm rounded-full text-black border border-transparent bg-gray-50 focus:ring-primary-300 focus:border-primary-300 focus:outline-none focus:border-2"
-                          placeholder="Search..."
-                          required
-                        />
-                        
+                  >
+                    <div className="relative">
+                      <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                        <svg
+                          className="w-4 h-4 text-black"
+                          aria-hidden="true"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            stroke="currentColor"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
+                          />
+                        </svg>
                       </div>
-                    </form>
-                  
-                  <a className="p-2 text-gray-400 hover:text-gray-500">
+                      <input
+                        type="search"
+                        id="default-search"
+                        className="h-10 block p-4 ps-10 text-sm rounded-full text-black border border-transparent bg-gray-50 focus:ring-primary-300 focus:border-primary-300 focus:outline-none focus:border-2"
+                        placeholder="Search..."
+                        required
+                      />
+                    </div>
+                  </form>
+
+                  <a className="p-2 text-black hover:text-gray-800">
                     <span className="sr-only">Search</span>
                     <MagnifyingGlassIcon
                       className="h-6 w-6"
@@ -607,10 +596,10 @@ const Header = () => {
 
                 {/* Cart */}
                 <div className="ml-4 flow-root lg:ml-6 relative">
-                  <a className="group -m-2 flex items-center p-2 relative">
+                  <div className="group -m-2 flex items-center p-2 relative cursor-pointer">
                     <div className="relative inline-block">
                       <ShoppingBagIcon
-                        className="h-6 w-6 text-gray-400 hover:text-gray-500 cursor-pointer"
+                        className="h-6 w-6 text-black hover:text-black"
                         aria-hidden="true"
                         id="redNumber"
                         onMouseOver={() =>
@@ -702,7 +691,7 @@ const Header = () => {
                         </div>
                       </div>
                     </div>
-                  </a>
+                  </div>
                 </div>
               </div>
             </div>
